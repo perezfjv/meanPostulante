@@ -1,0 +1,53 @@
+<!-- views/index.ejs -->
+<!doctype html>
+<html>
+<head>
+	<title>List Employee</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<style>
+		body 		{ padding-top:80px; }
+	</style>
+</head>
+<body>
+<div class="panel panel-primary" style="width:950px; margin:0 auto;">
+
+	<div class="jumbotron text-center" ng-init="listPostulante()">
+		<h1><span class=""></span> {{titulo}}  {{version}}</h1>
+
+				<table class="table table-striped">
+					<tr class="info" style="color:blue">
+					  
+						<td>Nombres</td>
+						<td>Apellidos</td>
+						<td>Nacimiento</td>
+						<td>Especialidad</td>
+						<td>Años de Experiencia</td>
+						<td>Option</td>
+					</tr>
+					<tr ng-repeat="p in postulantes" >
+				
+						<td>{{ p.name }}</td>
+						<td>{{ p.lastname }}</td>
+						<td>{{ p.birthdate }}</td>	
+						<td>{{ p.expertise }}</td>	
+						<td>{{ p.yearexperience }}</td>	
+						
+
+						<td>
+							<img ng-src="{{urlImage}}" 
+       								alt="{{nameImage}}" 
+    
+       								ng-click="eliminarPostulante(p.id)"
+       						/>
+
+						</td>
+
+					</tr>
+				</table>					
+		
+	</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+angular.module('postulantes', ['ngRoute', 'appRoutes','registerPostulanteCtrl','listPostulanteCtrl']);
